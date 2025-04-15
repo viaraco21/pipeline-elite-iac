@@ -6,15 +6,6 @@ terraform {
     }
   }
 
-  backend "s3" {
-     bucket         = "fsv-terraform"
-     key            = "terraform.tfstate"
-     region         = "us-east-1"
-     dynamodb_table = "terraform-locks"
-     encrypt        = true
-   }
-}
-
 provider "aws" {
   region = var.region
   default_tags {
