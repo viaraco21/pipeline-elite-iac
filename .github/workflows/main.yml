@@ -61,6 +61,28 @@ jobs:
           format: 'table'
           ignore-unfixed: true
           output: trivy-results.txt 
+
+      - name: Publish Output to Summary
+        run: |
+          if [[ -s ./src/tflint-results.txt ]]; then
+            {
+              echo "### Relatorio do TFLint"
+              echo "<details><summary>Expandir</summary>"
+              echo ""
+              cat ./src/tflint-results.txt
+              echo "</details>"
+            } >> $GITHUB_STEP_SUMMARY
+          fi   
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [[ -s trivy-results.txt ]]; then
+            {
+              echo "### Relatorio do Trivy"
+              echo "<details><summary>Expandir</summary>"
+              echo ""
+              cat trivy-results.txt
+              echo "</details>"
+            } >> $GITHUB_STEP_SUMMARY
+          fi           
         
   terraform-exec:
     runs-on: ubuntu-latest
