@@ -1,0 +1,32 @@
+name: IaC Pipeline
+
+on: 
+  push: 
+    branches:
+      - main
+
+jobs:
+  terraform-exec:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+        
+        
+      - name: Execução do Terraform Init
+        run: terraform init 
+        working-directory: ./src 
+        
+      - name: Execução do Terraform Validate
+        run: terraform validate
+        working-directory: ./src
+        
+      - name: Execução do Terraform Apply
+        run: terraform apply --auto-approve
+        working-directory: ./src 
+        
