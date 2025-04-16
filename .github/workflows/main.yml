@@ -74,7 +74,7 @@ jobs:
               echo "</details>"
             } >> $GITHUB_STEP_SUMMARY
           fi   
-          
+          echo "" >> $GITHUB_STEP_SUMMARY
           if [[ -s trivy-results.txt ]]; then
             {
               echo "### Relatorio do Trivy"
