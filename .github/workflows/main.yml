@@ -47,7 +47,7 @@ jobs:
       - name: Execução do Terraform Plan 
         working-directory: ./src 
         run: | 
-          terraform plan -input=false -no-color -out=tfplan && terraform show -no-color tfplan > tfplan.json        
+          terraform plan -input=false -no-color -out=tfplan && terraform show -no-color -json tfplan > tfplan.json        
       
       - name: Executando o Trivy Scan
         uses: aquasecurity/trivy-action@0.30.0
