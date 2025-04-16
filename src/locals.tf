@@ -3,9 +3,9 @@ locals {
     var.tags,
     {
       Environment = "aula"
-      Projeto = "pipeline-elite"
+      Projeto     = "pipeline-elite"
     }
   )
 
-  cluster_name = "${var.eks_cluster_name}"
+  cluster_name = var.eks_cluster_name
 } 

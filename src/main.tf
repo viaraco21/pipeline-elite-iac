@@ -1,7 +1,7 @@
 module "networking" {
   source = "./modules/networking"
 
-  vpc_cidr    = var.vpc_cidr
+  vpc_cidr = var.vpc_cidr
 
   public_subnets      = var.public_subnets
   eks_private_subnets = var.eks_private_subnets

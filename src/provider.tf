@@ -7,12 +7,12 @@ terraform {
   }
 
   backend "s3" {
-     bucket         = "fsv-terraform"
-     key            = "terraform.tfstate"
-     region         = "us-east-1"
-     dynamodb_table = "terraform-locks"
-     encrypt        = true
-   }
+    bucket         = "fsv-terraform"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "terraform-locks"
+  }
 }
 
 provider "aws" {
