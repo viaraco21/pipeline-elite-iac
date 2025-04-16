@@ -56,20 +56,19 @@ jobs:
           hide-progress: true          
           scan-ref: './src/tfplan.json'
           exit-code: '0'
-          severity: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
-          trivy-config: trivy.yaml     
+          severity: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL 
           format: 'table'
           ignore-unfixed: true
           output: trivy-results.txt 
 
       - name: Publish Output to Summary
         run: |
-          if [[ -s ./src/tflint-results.txt ]]; then
+          if [[ -s ./src/tflint-result.txt ]]; then
             {
               echo "### Relatorio do TFLint"
               echo "<details><summary>Expandir</summary>"
               echo ""
-              cat ./src/tflint-results.txt
+              cat ./src/tflint-result.txt
               echo "</details>"
             } >> $GITHUB_STEP_SUMMARY
           fi   
