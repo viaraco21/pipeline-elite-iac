@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "fsv-terraform"
+    bucket         = "fsv-terraform-raco"
     key            = "terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
