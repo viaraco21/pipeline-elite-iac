@@ -1,3 +1,6 @@
+# Inicio automatico depois do git push
+# Este arquivo é um exemplo de pipeline de IaC (Infrastructure as Code) utilizando Terraform, TFLint e Trivy.  
+
 name: IaC Pipeline
 
 on: 
@@ -22,7 +25,9 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.7.0"      
+          terraform_version: "1.7.0"     
+          
+  ## Execucao do TFLint e Trivy - Terraform         
           
       - name: Execução do Terraform Init
         run: terraform init 
