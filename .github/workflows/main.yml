@@ -1,5 +1,5 @@
 # Inicio automatico depois do git push
-# Este arquivo é um exemplo de pipeline de IaC (Infrastructure as Code) utilizando Terraform, TFLint e Trivy.  
+# Este arquivo é um exemplo de pipeline de IaC na AWS (Infrastructure as Code) utilizando Terraform, TFLint e Trivy.  
 
 name: IaC Pipeline
 
